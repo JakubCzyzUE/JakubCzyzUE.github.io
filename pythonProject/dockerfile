@@ -1,0 +1,17 @@
+FROM python:3.11.1
+
+RUN apt-get update && apt-get install -y libglib2.0-0 libgl1-mesa-glx && rm -rf /var/lib/apt/lists/*
+RUN pip install opencv-python
+RUN pip install imutils
+RUN pip install numpy
+
+ADD utils C:\Users\Jakub\Desktop\pythonProject\utils
+
+COPY main.py .
+COPY Detector.py .
+
+
+#WORKDIR /pythonProject/main.py
+
+
+CMD ["python","main.py"]
