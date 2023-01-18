@@ -34,7 +34,6 @@ def HOGpersonDetector(img_name: str):
         cv.rectangle(image, (xA, yA), (xB, yB), (0, 255, 0), 2)
         people_at_photo += 1
 
-    #cv.putText(image, "People at photo: " + str(people_at_photo), (30, 10), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0))
 
     _, im_arr = cv.imencode('.jpg', image)
     im_bytes = im_arr.tobytes()
